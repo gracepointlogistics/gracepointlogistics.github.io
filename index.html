@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -63,6 +63,25 @@
     li {
       margin-bottom: 10px;
     }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+    table, th, td {
+      border: 1px solid #ccc;
+    }
+    th, td {
+      padding: 10px;
+      text-align: center;
+    }
+    th {
+      background-color: #0b3c5d;
+      color: white;
+    }
+    td {
+      background-color: #eef2f5;
+    }
     footer {
       background: #0b3c5d;
       color: #fff;
@@ -74,10 +93,17 @@
       margin: 8px 0;
     }
     .social a {
-      margin-right: 15px;
+      margin-right: 10px;
       color: #0b3c5d;
       text-decoration: none;
       font-weight: bold;
+      display: inline-flex;
+      align-items: center;
+    }
+    .social img {
+      width: 20px;
+      height: 20px;
+      margin-right: 5px;
     }
     input, label {
       font-family: inherit;
@@ -93,7 +119,6 @@
     button {
       cursor: pointer;
     }
-    /* WhatsApp floating button */
     .whatsapp-button {
       position: fixed;
       bottom: 20px;
@@ -131,19 +156,6 @@
     <p>At GracePoint Logistics, we help customers ship packages from abroad to Jamaica quickly and securely. Our mission is to simplify international shipping, providing reliable delivery, transparent pricing, and friendly customer support. Whether it’s personal shipments or business cargo, we handle every package with care.</p>
   </div>
 
-  <!-- Contact Info -->
-  <div class="card">
-    <h2>Contact Us</h2>
-    <p><strong>Location:</strong> New Road, Chapelton, Clarendon</p>
-    <p><strong>Phone / WhatsApp:</strong> +1 876-835-5501</p>
-    <p><strong>Email:</strong> Gracepoint.logistics@outlook.com</p>
-    <div class="social">
-      <strong>Follow us:</strong>
-      <a href="https://instagram.com/gracepoint_logistics" target="_blank">Instagram</a>
-      <a href="https://tiktok.com/@GracePointLogistics" target="_blank">TikTok</a>
-    </div>
-  </div>
-
   <!-- Our Services -->
   <div class="card">
     <h2>Our Services</h2>
@@ -154,6 +166,44 @@
       <li>Package Tracking – Stay informed with real-time updates.</li>
       <li>Special Cargo Handling – Fragile and valuable items shipped safely.</li>
     </ul>
+  </div>
+
+  <!-- Shipping Rates -->
+  <div class="card">
+    <h2>Shipping Rates (JMD)</h2>
+    <table>
+      <tr>
+        <th>Pounds</th>
+        <th>Price</th>
+      </tr>
+      <tr><td>1 lb</td><td>$850</td></tr>
+      <tr><td>2 lbs</td><td>$1250</td></tr>
+      <tr><td>3 lbs</td><td>$1650</td></tr>
+      <tr><td>4 lbs</td><td>$2050</td></tr>
+      <tr><td>5 lbs</td><td>$2450</td></tr>
+      <tr><td>6 lbs</td><td>$2850</td></tr>
+      <tr><td>7 lbs</td><td>$3250</td></tr>
+      <tr><td>8 lbs</td><td>$3650</td></tr>
+      <tr><td>9 lbs</td><td>$4050</td></tr>
+      <tr><td>10 lbs</td><td>$4450</td></tr>
+    </table>
+  </div>
+
+  <!-- Contact Info -->
+  <div class="card">
+    <h2>Contact Us</h2>
+    <p><strong>Location:</strong> New Road, Chapelton, Clarendon</p>
+    <p><strong>Phone / WhatsApp:</strong> +1 876-835-5501</p>
+    <p><strong>Email:</strong> Gracepoint.logistics@outlook.com</p>
+    <div class="social">
+      <strong>Follow us:</strong>
+      <a href="https://instagram.com/gracepoint_logistics" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram">Instagram
+      </a>
+      <a href="https://tiktok.com/@GracePointLogistics" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/3046/3046129.png" alt="TikTok">TikTok
+      </a>
+    </div>
   </div>
 
   <!-- FAQ -->
