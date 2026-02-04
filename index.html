@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -141,7 +141,7 @@
 <body>
 
 <header>
-  <img src="https://raw.githubusercontent.com/gracepointlogistics/gracepointlogistics.github.io/main/logo.png" alt="GracePoint Logistics Logo" />
+  <img src="https://raw.githubusercontent.com/gracepointlogistics/gracepointlogistics.github.io/main/3C4CA251-C1AB-444B-B218-823766DAA063.png" alt="GracePoint Logistics Logo" />
   <h1>GracePoint Logistics</h1>
   <p>Fast • Secure • Reliable Shipping from anywhere in the world to Jamaica</p>
   <p>Your trusted partner for shipping packages, documents, barrels and more with hassle-free pick up!</p>
@@ -214,22 +214,21 @@
     <p><strong>Q:</strong> What areas do you deliver to?<br><strong>A:</strong> We offer limited delivery service to parts of Jamaica, but we are open 6 days a week with hassle-free and convenient pickup.</p>
   </div>
 
-  <!-- Customer Registration -->
+  <!-- Customer Registration using Formspree -->
   <div class="card">
     <h2>Customer Registration</h2>
-    <form id="registrationForm">
+    <form action="https://formspree.io/f/xdadqpzg" method="POST">
       <label for="name">Full Name:</label><br>
       <input type="text" id="name" name="name" placeholder="John Doe" required /><br>
-      
+
       <label for="email">Email:</label><br>
-      <input type="email" id="email" name="email" placeholder="you@example.com" required /><br>
-      
+      <input type="email" id="email" name="_replyto" placeholder="you@example.com" required /><br>
+
       <label for="phone">Phone / WhatsApp:</label><br>
       <input type="tel" id="phone" name="phone" placeholder="+1 876-123-4567" required /><br>
-      
+
       <button type="submit" style="background-color:#c1121f;color:#fff;padding:10px 20px;border:none;border-radius:5px;">Register</button>
     </form>
-    <p style="margin-top:10px;font-size:0.9rem;color:#555;">*Registration submissions currently go via email/WhatsApp manually. Backend integration can be added later.</p>
   </div>
 
   <!-- Package Tracking -->
@@ -260,11 +259,22 @@
     document.getElementById('trackingResult').innerText = "Tracking info for " + trackingID + " is currently being processed. Please contact us via WhatsApp for real-time updates.";
   });
 
-  // Customer Registration simulation
-  document.getElementById('registrationForm').addEventListener('submit', function(e){
+  // Formspree Thank-you alert
+  const form = document.querySelector('form[action="https://formspree.io/f/xdadqpzg"]');
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    alert("Thank you for registering! We will contact you shortly via WhatsApp or email.");
-    document.getElementById('registrationForm').reset();
+    const data = new FormData(form);
+    const response = await fetch(form.action, {
+      method: form.method,
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    });
+    if (response.ok) {
+      alert("Thank you for registering! We will contact you shortly via WhatsApp or email.");
+      form.reset();
+    } else {
+      alert("Oops! There was a problem submitting your form.");
+    }
   });
 </script>
 
